@@ -1,0 +1,29 @@
+@import "variables"
+@import "../utils/mixins"
+
+body
+    color: $cl-text
+    font-family: $font-copy
+
+p, td, th, ul, ol, blockquote
+    +font-size($font-size-base)
+
+h1, h2, h3, h4
+    color: $cl-text-heading
+    font-family: $font-heading
+
+a
+    color: $cl-link-default
+
+hr
+    border-bottom-style: none
+    border-top-style: solid
+    border-color: $cl-text
+    border-width: 1px
+
+
+blockquote
+    border-left: 3px solid $cl-primary
+    padding: 1em
+    font-style: italic
+

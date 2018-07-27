@@ -1,0 +1,30 @@
+@import "../configuration/fonts"
+@import "../configuration/sizing"
+@import "../configuration/modules/table"
+
+.table
+    width: 100%
+    max-width: 100%
+    border-collapse: collapse
+    border-spacing: 0
+    th, td
+        text-align: left
+    > tbody > tr > td,
+    > tbody > tr > th,
+    > thead > tr > th
+        vertical-align: top
+        border-top: 1px solid $table-cl-cell-border
+        padding: $siz-padding-small-vertical $siz-padding-small-horizontal
+        line-height: 1.42857143
+        +font-size($font-size-sm)
+        +bp-sm
+            +font-size($font-size-base)
+    > thead
+        &:first-child > tr:first-child > th
+            border-top: 0
+        > tr > th
+            vertical-align: bottom
+            border-bottom: 1px solid $table-cl-cell-border
+
+.table-striped > tbody > tr:nth-child(odd) > td
+    background-color: $table-cl-stripe-bg

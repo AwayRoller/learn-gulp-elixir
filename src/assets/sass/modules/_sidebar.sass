@@ -1,0 +1,81 @@
+@import "../configuration/colors"
+@import "../configuration/sizing"
+@import "../configuration/fonts"
+@import "../configuration/modules/sidebar"
+
+.sidebar
+    background-color: $sidebar-mobile-bg
+    margin: ($siz-general-margin/2) 0
+    +bp-md
+        background-color: transparent
+        margin: 0
+
+.sidebar-title
+    float: left
+    margin: 0
+    font-family: $font-heading
+    color: $cl-text-secondary
+
+.sidebar-header
+    padding: 10px
+    cursor: pointer
+    +clearfix
+    +bp-md
+        display: none
+
+.sidebar-account
+    +bp-md
+        &:before
+            content: ""
+            display: block
+            height: 43px
+
+.sidebar-expand
+    float: right
+    padding-top: 5px
+    color: $cl-text-secondary
+    +bp-md
+        display: none
+    [role="collapse-icon"]
+        +transition(250ms all)
+        &:before
+            content: "\64"
+    [role="collapse-icon"].is-open
+        +transform(rotate(180deg))
+        //&:before
+        //    content: "\5e"
+
+.sidebar-content
+    display: none
+    padding: 10px
+    +bp-md
+        padding: 0
+        display: inherit!important
+
+.sidebar-left
+    padding: $siz-general-margin
+    +bp-md
+        padding: 0 $siz-general-margin 0 0
+
+.sidebar-right
+    padding-left: 2*$siz-general-margin
+    padding-right: 0
+
+.sidebar-links
+    margin: 0
+    padding: 0
+    li
+        list-style: none
+        +font-size($font-size-sm)
+        margin-bottom: 0.17em
+        a
+            color: $cl-link-variant
+            text-decoration: none
+            &:hover
+                color: $cl-text-muted
+                &::before
+                    color: $cl-text-muted
+        &:before
+            color: $cl-link-variant
+            content: 'b '
+            font-family: $font-icons

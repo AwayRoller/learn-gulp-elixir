@@ -1,0 +1,156 @@
+@import "../configuration/colors"
+@import "../configuration/sizing"
+@import "../configuration/modules/button"
+@import "../configuration/modules/form"
+
+
+.form-group
+    margin-bottom: $form-group-margin-bottom
+
+.form-control 
+    display: block
+    width: 100%
+    // // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+    // height: $input-height
+    padding: $form-input-siz-padding-y $form-input-siz-input-padding-x
+    font-family: $font-copy
+    +font-size($font-size-base)
+    line-height: $form-input-line-height
+    color: $form-input-cl-text
+    background-color: $form-input-cl-bg
+    // Reset unusual Firefox-on-Android default style see https://github.com/necolas/normalize.css/issues/214.
+    background-image: none
+    background-clip: padding-box
+    box-sizing: border-box
+    border: $form-input-siz-border solid $form-input-cl-border
+    +border-radius($siz-border-radius-base)
+
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand 
+        background-color: transparent
+        border: 0
+
+
+    // Placeholder
+    &::placeholder 
+        color: $form-input-cl-placeholder
+        // Override Firefox's unusual default opacity see https://github.com/twbs/bootstrap/pull/11526.
+        opacity: 1
+
+
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that controls under a fieldset > legend:first-child won't be
+    // disabled if the fieldset is disabled. Due to implementation difficulty, we
+    // don't honor that edge case we style them as disabled anyway.
+    &:disabled,
+    &[readonly] 
+        background-color: $form-input-cl-bg-disabled
+        // iOS fix for unreadable disabled content see https://github.com/twbs/bootstrap/issues/11655.
+        opacity: 1
+
+
+    &:disabled 
+        cursor: not-allowed
+
+.form
+    width: 100%
+    fieldset
+        margin: 0
+        padding: .35em 0 .75em
+        border: 0
+    label
+        +font-size($btn-font-size-small)
+        display: inline-block
+        margin: 0 0 0.5em
+    input, select, textarea
+        display: block
+        font-family: $font-copy
+        font-weight: 300
+        +font-size($btn-font-size-base)
+        line-height: $siz-line-height-base
+        padding: $siz-padding-base-vertical $siz-padding-base-horizontal
+        border: 1px solid $cl-separator
+        background-color: transparent
+        vertical-align: middle
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+    input:not([type=submit]):not([type=file]):not([type=radio]):not([type=checkbox]), select, textarea
+        width: 100%
+    input[type='checkbox']
+        display: inline-block
+        padding-left: .25em
+    input[type='radio']
+        display: inline-block
+        & + label
+            display: inline-block
+            padding: 0 0.5em
+    .form-group
+        margin-bottom: 15px
+
+.input-group
+    display: inline-table
+    vertical-align: middle
+    .input-group-addon,
+    .input-group-btn,
+    .form-control
+        width: auto
+    .input-group > .form-control
+        width: 100%
+
+.checkbox
+    margin-bottom: 0
+    margin-top: 0
+    padding-left: 0px
+    position: relative
+    display: block
+    & input[type=checkbox]
+        display: none
+    label
+        display: inline-block
+        cursor: pointer
+        position: relative
+        padding-left: 25px
+        color: $cl-text-secondary
+        transition: border 0.2s linear 0s, color 0.2s linear 0s
+        direction: ltr
+        min-height: 17px
+        line-height: 17px
+        box-sizing: border-box
+        &:before
+            content: ""
+            display: inline-block
+            width: 14px
+            height: 14px
+            margin-right: 10px
+            position: absolute
+            left: 0px
+            top: 1.4px
+            background-color: transparent
+            border: 1px solid $form-cl-checkbox-bg
+            border-radius: 3px
+            transition: border 0.2s linear 0s, color 0.2s linear 0s
+        &:after
+            display: inline-block
+            width: 16px
+            height: 16px
+            position: absolute
+            left: 3px
+            top: 1px
+            font-size: 11px
+            transition: border 0.2s linear 0s, color 0.2s linear 0s
+            box-sizing: border-box
+    & input[type=checkbox]:checked + label:after
+        font-family: $font-icons
+        color: $form-cl-checkbox-tick
+        content: "\79"
+    & input[type=checkbox]:checked + label:before
+        background-color: $form-cl-checkbox-bg
+        border: 1px solid $form-cl-checkbox-bg
+
+.form-title
+    line-height: 1.2
+    margin: 10px 0
+    padding-bottom: 5px
+    border-bottom: 1px solid $cl-separator

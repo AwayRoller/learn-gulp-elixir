@@ -1,0 +1,78 @@
+@import "../configuration/colors"
+@import "../configuration/sizing"
+@import "../configuration/fonts"
+@import "../configuration/modules/modal"
+
+.modal
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: $modal-shade
+    z-index: 99999
+    opacity: 0
+    +transition(opacity 170ms ease-in)
+    pointer-events: none
+    
+.modal:target 
+    opacity: 1
+    pointer-events: auto
+    +transition(opacity 230ms ease-in)
+
+
+.modal-close 
+    background: $cl-state-danger-text
+    color: $cl-white
+    position: absolute
+    right: 0
+    top: 0
+    border-top-right-radius: $siz-border-radius-base
+    +font-size($font-size-base)
+    padding: ($font-size-base / 3 + 2px) 10px 2px
+    text-align: center
+    text-decoration: none
+    +transition(background-color 170ms ease-in)
+    &:hover
+        +transition(background-color 230ms ease-in)
+        background: lighten($cl-state-danger-text, 12)
+
+
+
+.modal-form
+    position: relative
+    margin: 10% auto
+    padding: $siz-padding-base-vertical $siz-padding-base-horizontal $siz-padding-base-vertical $siz-padding-base-horizontal
+    border-radius: $siz-border-radius-base
+    background: $modal-bg
+    width: 90%
+    +bp-sm
+        width: 67%
+    +bp-md
+        width: 62%
+    +bp-lg
+        width: 550px
+    +bp-xl
+        width: 650px
+    .form-footer
+        background-color: $cl-panel-bg
+        border-bottom-left-radius: $siz-border-radius-base
+        border-bottom-right-radius: $siz-border-radius-base
+        padding: $siz-padding-base-horizontal
+        margin: $siz-padding-base-vertical (-1*$siz-padding-base-horizontal) (-2*$siz-border-radius-base)
+
+.modal-form-small
+    +bp-sm
+        width: 50%
+    +bp-lg
+        width: 320px
+    +bp-xl
+        width: 400px
+
+.modal-form-large
+    +bp-sm
+        width: 83%
+    +bp-lg
+        width: 768px
+    +bp-xl
+        width: 980px

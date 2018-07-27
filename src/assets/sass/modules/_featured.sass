@@ -1,0 +1,44 @@
+@import "../configuration/sizing"
+@import "../configuration/colors"
+
+///
+// 4 column, responsive featured section component
+//
+
+.featured-container
+    margin: $siz-general-margin 0
+    +bp-sm
+        > div
+            &:nth-child(odd) .featured
+                padding-right: 12px
+            &:nth-child(even) .featured
+                padding-left: 12px
+    +bp-md
+        > div
+            &:nth-child(odd) .featured
+                padding-right: inherit
+            &:nth-child(even) .featured
+                padding-left: inherit
+            &:first-of-type .featured
+                padding-right: 24px
+            &:nth-of-type(2) .featured
+                padding: 0 16px 0 8px
+            &:nth-of-type(3) .featured
+                padding: 0 8px 0 16px
+            &:last-of-type .featured
+                padding-left: 24px
+    .featured
+        margin: 12px 0
+        +bp-md
+            margin: 0
+        .featured-description
+            a
+                text-decoration: none
+                h3
+                    +font-size($font-size-lx)
+            padding: 10px
+            background-color: $cl-primary
+            .featured-title
+                margin: 0
+            .featured-add-to-cart
+                text-align: right

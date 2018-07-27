@@ -1,0 +1,98 @@
+//
+// CSS only Responsive Tables
+// http://dbushell.com/2016/03/04/css-only-responsive-tables/
+// by David Bushell
+//
+
++bp-md-and-below
+    .table-responsive
+        display: inline-block
+        vertical-align: top
+        max-width: 100%
+
+        overflow-x: auto
+
+        // optional - looks better for small cell values
+        white-space: nowrap
+
+        border-collapse: collapse
+        border-spacing: 0
+
+
+    .table-responsive,
+    .table-responsive--flip tbody
+        // optional - enable iOS momentum scrolling
+        -webkit-overflow-scrolling: touch
+
+        // scrolling shadows
+        background: radial-gradient(left, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 0 center, radial-gradient(right, ellipse, rgba(0,0,0, .2) 0%, rgba(0,0,0, 0) 75%) 100% center
+        background-size: 10px 100%, 10px 100%
+        background-attachment: scroll, scroll
+        background-repeat: no-repeat
+
+
+    // change these gradients from white to your background colour if it differs
+    // gradient on the first cells to hide the left shadow
+    .table-responsive td:first-child,
+    .table-responsive--flip tbody tr:first-child
+        background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%)
+        background-repeat: no-repeat
+        background-size: 20px 100%
+
+
+    // gradient on the last cells to hide the right shadow
+    .table-responsive td:last-child,
+    .table-responsive--flip tbody tr:last-child
+        background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%)
+        background-repeat: no-repeat
+        background-position: 100% 0
+        background-size: 20px 100%
+
+
+    .table-responsive--flip
+        display: flex
+        overflow: hidden
+        background: none
+
+
+    .table-responsive--flip thead
+        display: flex
+        flex-shrink: 0
+        min-width: min-content
+
+
+    .table-responsive--flip tbody
+        display: flex
+        position: relative
+        overflow-x: auto
+        overflow-y: hidden
+
+
+    .table-responsive--flip tr
+        display: flex
+        flex-direction: column
+        min-width: min-content
+        flex-shrink: 0
+
+
+    .table-responsive--flip td,
+    .table-responsive--flip th
+        display: block
+
+
+    .table-responsive--flip td
+        background-image: none !important
+        // border-collapse is no longer active
+        border-left: 0!important
+
+
+    // border-collapse is no longer active
+    .table-responsive--flip th:not(:last-child),
+    .table-responsive--flip td:not(:last-child)
+        border-bottom: 0
+
+    .table-responsive--flip
+        > tbody > tr:last-of-type > td
+            border-bottom: none
+
+

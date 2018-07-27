@@ -1,0 +1,70 @@
+@import "../configuration/integrations/owlcarousel"
+
+/* 
+ * 	Owl Carousel Site Theme
+ */
+.owl-homemain
+    .owl-nav
+        margin-top: 5px
+        text-align: center
+        -webkit-tap-highlight-color: transparent
+        [class*='owl-']
+            color: $owl-cl-nav-text
+            font-size: 14px
+            margin: 5px
+            padding: 4px 7px
+            background: $owl-cl-nav-bg
+            display: inline-block
+            cursor: pointer
+            -webkit-border-radius: 3px
+            -moz-border-radius: 3px
+            border-radius: 3px
+            &:hover
+                background: $owl-cl-nav-hover-bg
+                color: $owl-cl-nav-text
+                text-decoration: none
+        .disabled
+            opacity: 0.5
+            cursor: default
+        &.disabled + .owl-dots
+            margin-top: 5px
+
+    .owl-dots
+        text-align: center
+        -webkit-tap-highlight-color: transparent
+        .owl-dot
+            display: inline-block
+            zoom: 1
+            *display: inline
+            span
+                width: 10px
+                height: 10px
+                margin: 5px 4px
+                background: $owl-cl-nav-bg
+                display: block
+                -webkit-backface-visibility: visible
+                -webkit-transition: opacity 200ms ease
+                -moz-transition: opacity 200ms ease
+                -ms-transition: opacity 200ms ease
+                -o-transition: opacity 200ms ease
+                transition: opacity 200ms ease
+                -webkit-border-radius: 30px
+                -moz-border-radius: 30px
+                border-radius: 30px
+            &.active span, &:hover span
+                background: $owl-cl-nav-hover-bg
+
+.owl-product-slider
+    .owl-prev, .owl-next
+        position: absolute
+        top: 40%
+        background-color: $owl-cl-pacer-bg
+        color: $owl-cl-pacer-text
+        &.disabled
+            color: $owl-cl-pacer-disabled-text
+    .owl-prev
+        left: -15px
+        padding: 9px 9px 4px 7px
+    .owl-next
+        right: -15px
+        padding: 9px 7px 4px 9px

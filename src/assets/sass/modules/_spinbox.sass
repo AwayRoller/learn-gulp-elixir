@@ -1,0 +1,45 @@
+@import "../base/variables"
+
+.spinbox
+    margin-bottom: 20px!important
+    position: relative
+    display: inline-block
+    min-width: 75px //to prevent from overflow with delete icon on smaller layouts
+    .spinbox-ctrl
+        height: 17px
+        border: 1px solid $spinbox-ctrl-bg-color
+        margin: 0!important
+        text-align: center
+        left: 16px
+        position: absolute
+        width: 21px
+        +bp-md
+            width: 37px
+    .spinbox-btn
+        display: inline-block
+        position: absolute
+        top: 0
+        cursor: pointer
+        margin: 0
+        height: 20px
+        width: 16px
+        background-color: $spinbox-ctrl-bg-color
+        text-align: center
+        +font-size($font-size-sm)
+        padding-top: 1px
+    .spinbox-btn-dec
+        left: 0
+    .spinbox-btn-inc
+        left: 39px
+        +bp-md
+            left: 55px
+    .spinbox-append
+        position: absolute
+        padding-top: 2px
+        left: 59px
+        +bp-md
+            left: 75px
+        +font-size($font-size-sm)
+    .spinbox-loader
+        padding-top: 3px
+        width: 13px

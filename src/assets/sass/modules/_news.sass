@@ -1,0 +1,21 @@
+@import "../configuration/sizing"
+@import "../configuration/fonts"
+
+.news-container
+    a
+        text-decoration: none
+    margin: $siz-general-margin 0
+    > div
+        &:first-of-type .news
+            padding-right: 20px
+        &:last-of-type .news
+            padding-left: 20px
+        &:nth-of-type(2) .news
+            padding: 0 10px
+    .news
+        .news-title
+            margin: 0
+            +font-size($font-size-title)
+        .news-description
+            +font-size($font-size-lg)
+            margin: 0 0 $siz-general-margin 0

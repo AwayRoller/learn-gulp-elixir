@@ -1,0 +1,31 @@
+@import "../configuration/colors"
+@import "../configuration/sizing"
+@import "../configuration/fonts"
+@import "../configuration/misc"
+
+.review
+    background-color: $cl-panel-bg
+    padding: $siz-general-margin
+    margin-bottom: $siz-general-margin
+    .panel
+        .panel-heading
+            .pull-right
+                color: $cl-text-secondary
+                +font-size($font-size-sm)
+        .panel-body
+            color: $cl-text
+            +font-size($font-size-sm)
+            h4
+                color: $cl-success
+        .panel-footer
+            margin-top: $siz-general-margin
+            color: $cl-text-secondary
+            +font-size($font-size-sm)
+
+.review-form, .review .panel
+    background-color: $cl-white
+    padding: ($siz-general-margin/2)
+    +boxshadow($misc-shadow-default)
+
+.review-form
+    width: auto!important

@@ -1,0 +1,17 @@
+@import "../configuration/colors"
+@import "../configuration/fonts"
+
+.page-title
+    +page-title()
+
+.page-toc
+    li
+        list-style: none
+        color: $cl-success
+        a
+            color: $cl-success
+            text-decoration: none
+        &:before
+            content: '> '
+            font-size: 9px
+            font-family: $font-icons
